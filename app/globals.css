@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: #f7f9fc;
+  --foreground: #0b1d3c;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #071225;
+  --foreground: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(33, 166, 226, 0.22);
+}
+
+.section-pad {
+  padding: 96px 0;
+}
+
+.container-sds {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.data-grid {
+  background-image:
+    linear-gradient(rgba(23, 78, 166, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 78, 166, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.dark-data-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding: 72px 0;
+  }
+
+  .container-sds {
+    width: min(100% - 28px, 1180px);
+  }
+}
