@@ -1,4 +1,4 @@
-import { industries, processSteps, services, solutions, values } from "@/data/site";
+import { industries, processSteps, services, solutions, stats, values, type StatId } from "@/data/site";
 
 export const locales = ["en", "pt", "fr"] as const;
 export type Locale = (typeof locales)[number];
@@ -135,9 +135,32 @@ const processText = {
   ].map(([title, description]) => ({ title, description }))
 } satisfies Record<Locale, Array<{ title: string; description: string }>>;
 
+const statText: Record<Locale, Record<StatId, string>> = {
+  en: {
+    experience: "Years of experience",
+    projects: "Enterprise projects",
+    technologies: "Technologies mastered",
+    countries: "Countries supported"
+  },
+  pt: {
+    experience: "Anos de experiência",
+    projects: "Projetos empresariais",
+    technologies: "Tecnologias dominadas",
+    countries: "Países atendidos"
+  },
+  fr: {
+    experience: "Années d’expérience",
+    projects: "Projets d’entreprise",
+    technologies: "Technologies maîtrisées",
+    countries: "Pays accompagnés"
+  }
+};
+
 export const dictionary = {
   en: {
     name: "English",
+    pageHeroProof: ["Strategy aligned", "Architecture ready", "Delivery governed"],
+    contactForm: { name: "Name", email: "Email", message: "Message", submit: "Send message" },
     nav: { services: "Services", solutions: "Solutions", about: "About", careers: "Careers", contact: "Contact", cta: "Get in Touch" },
     actions: { getInTouch: "Get in Touch", exploreServices: "Explore Services", learnMore: "Learn more", startConversation: "Start a Conversation" },
     footer: {
@@ -150,6 +173,7 @@ export const dictionary = {
       privacy: "Privacy Policy",
       terms: "Terms",
       copyright: "Copyright 2026 SAL Data Solutions. All rights reserved.",
+      tagline: "Transforming Data into Decisions",
       description: "SAL Data Solutions helps organizations transform raw data into enterprise decisions through engineering, analytics, AI, cloud, and governance."
     },
     home: {
@@ -217,6 +241,8 @@ export const dictionary = {
   },
   pt: {
     name: "Português",
+    pageHeroProof: ["Estratégia alinhada", "Arquitetura preparada", "Entrega governada"],
+    contactForm: { name: "Nome", email: "Email", message: "Mensagem", submit: "Enviar mensagem" },
     nav: { services: "Serviços", solutions: "Soluções", about: "Sobre", careers: "Carreiras", contact: "Contacto", cta: "Fale Connosco" },
     actions: { getInTouch: "Fale Connosco", exploreServices: "Ver Serviços", learnMore: "Saber mais", startConversation: "Iniciar Conversa" },
     footer: {
@@ -229,6 +255,7 @@ export const dictionary = {
       privacy: "Política de Privacidade",
       terms: "Termos",
       copyright: "Copyright 2026 SAL Data Solutions. Todos os direitos reservados.",
+      tagline: "Transformar Dados em Decisões",
       description: "A SAL Data Solutions ajuda organizações a transformar dados brutos em decisões empresariais através de engenharia, analytics, IA, cloud e governança."
     },
     home: {
@@ -296,6 +323,8 @@ export const dictionary = {
   },
   fr: {
     name: "Français",
+    pageHeroProof: ["Stratégie alignée", "Architecture prête", "Livraison gouvernée"],
+    contactForm: { name: "Nom", email: "Email", message: "Message", submit: "Envoyer le message" },
     nav: { services: "Services", solutions: "Solutions", about: "À propos", careers: "Carrières", contact: "Contact", cta: "Nous Contacter" },
     actions: { getInTouch: "Nous Contacter", exploreServices: "Voir les Services", learnMore: "En savoir plus", startConversation: "Démarrer l'Échange" },
     footer: {
@@ -308,6 +337,7 @@ export const dictionary = {
       privacy: "Politique de Confidentialité",
       terms: "Conditions",
       copyright: "Copyright 2026 SAL Data Solutions. Tous droits réservés.",
+      tagline: "Transformer les Données en Décisions",
       description: "SAL Data Solutions aide les organisations à transformer les données brutes en décisions d'entreprise grâce à l'ingénierie, l'analytics, l'IA, le cloud et la gouvernance."
     },
     home: {
@@ -393,4 +423,8 @@ export function localizedValues(locale: Locale) {
 
 export function localizedProcess(locale: Locale) {
   return processSteps.map((step, index) => ({ ...step, ...processText[locale][index] }));
+}
+
+export function localizedStats(locale: Locale) {
+  return stats.map((stat) => ({ ...stat, label: statText[locale][stat.id] }));
 }

@@ -134,11 +134,14 @@ export const processSteps = [
   { title: "Support", description: "Improve continuously through advisory, optimization, and enablement." }
 ];
 
-export const stats = [
-  { value: 12, suffix: "+", label: "Years of experience" },
-  { value: 85, suffix: "+", label: "Enterprise projects" },
-  { value: 30, suffix: "+", label: "Technologies mastered" },
-  { value: 8, suffix: "+", label: "Countries supported" }
+export type StatId = "experience" | "projects" | "technologies" | "countries";
+
+/** Edit KPI values here. Labels are translated in lib/i18n.ts. */
+export const stats: Array<{ id: StatId; value: number; suffix: string }> = [
+  { id: "experience", value: 10, suffix: "+" },
+  { id: "projects", value: 50, suffix: "+" },
+  { id: "technologies", value: 30, suffix: "+" },
+  { id: "countries", value: 3, suffix: "+" }
 ];
 
 export const values = [

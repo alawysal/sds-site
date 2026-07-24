@@ -11,7 +11,7 @@ import {
   TrendingUp
 } from "lucide-react";
 import { Counter, Reveal } from "@/components/motion";
-import { stats, technologies } from "@/data/site";
+import { technologies } from "@/data/site";
 import {
   dictionary,
   hrefFor,
@@ -19,6 +19,7 @@ import {
   localizedProcess,
   localizedServices,
   localizedSolutions,
+  localizedStats,
   localizedValues,
   type Locale
 } from "@/lib/i18n";
@@ -56,6 +57,7 @@ export function HomePage({ locale = "en" }: { locale?: Locale }) {
   const industries = localizedIndustries(locale);
   const values = localizedValues(locale);
   const processSteps = localizedProcess(locale);
+  const stats = localizedStats(locale);
 
   return (
     <>

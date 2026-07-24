@@ -4,11 +4,13 @@ export function PageHero({
   eyebrow,
   title,
   description,
+  proofItems = ["Strategy aligned", "Architecture ready", "Delivery governed"],
   children
 }: {
   eyebrow: string;
   title: string;
   description: string;
+  proofItems?: readonly string[];
   children?: ReactNode;
 }) {
   return (
@@ -26,7 +28,7 @@ export function PageHero({
         </div>
         <div className="hidden rounded-sds border border-white/10 bg-white/[0.06] p-6 backdrop-blur md:block">
           <div className="grid gap-3">
-            {["Strategy aligned", "Architecture ready", "Delivery governed"].map((item) => (
+            {proofItems.map((item) => (
               <div key={item} className="flex items-center justify-between border-b border-white/10 py-3 text-sm font-semibold text-white/[0.78] last:border-0">
                 <span>{item}</span>
                 <span className="h-2 w-2 rounded-full bg-cyan" />

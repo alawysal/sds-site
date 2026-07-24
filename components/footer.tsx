@@ -74,7 +74,7 @@ export function Footer() {
       <div className="border-t border-white/10 py-6">
         <div className="container-sds flex flex-col justify-between gap-3 text-xs text-white/55 sm:flex-row">
           <span>{copy.footer.copyright}</span>
-          <span>Transforming Data into Decisions</span>
+          <span>{copy.footer.tagline}</span>
         </div>
       </div>
     </footer>

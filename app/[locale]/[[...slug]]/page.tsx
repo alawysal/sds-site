@@ -53,7 +53,7 @@ export default function LocalizedPage({ params }: LocalizedPageProps) {
     const services = localizedServices(locale);
     return (
       <>
-        <PageHero eyebrow={page[0]} title={page[1]} description={page[2]}>
+        <PageHero eyebrow={page[0]} title={page[1]} description={page[2]} proofItems={copy.pageHeroProof}>
           <Link href={hrefFor(locale, "/contact")} className="inline-flex items-center gap-2 rounded-sds bg-white px-6 py-4 font-bold text-navy shadow-glow transition hover:bg-cyan">
             {copy.actions.getInTouch} <ArrowRight size={18} />
           </Link>
@@ -74,7 +74,7 @@ export default function LocalizedPage({ params }: LocalizedPageProps) {
     const solutions = localizedSolutions(locale);
     return (
       <>
-        <PageHero eyebrow={page[0]} title={page[1]} description={page[2]} />
+        <PageHero eyebrow={page[0]} title={page[1]} description={page[2]} proofItems={copy.pageHeroProof} />
         <section className="section-pad bg-white dark:bg-[#071225]">
           <div className="container-sds grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {solutions.map((solution) => (
@@ -92,7 +92,7 @@ export default function LocalizedPage({ params }: LocalizedPageProps) {
     const steps = localizedProcess(locale);
     return (
       <>
-        <PageHero eyebrow={page[0]} title={page[1]} description={page[2]} />
+        <PageHero eyebrow={page[0]} title={page[1]} description={page[2]} proofItems={copy.pageHeroProof} />
         <section className="section-pad bg-white dark:bg-[#071225]">
           <div className="container-sds grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((value) => (
@@ -119,7 +119,7 @@ export default function LocalizedPage({ params }: LocalizedPageProps) {
     const page = copy.pages.contact;
     return (
       <>
-        <PageHero eyebrow={page[0]} title={page[1]} description={page[2]} />
+        <PageHero eyebrow={page[0]} title={page[1]} description={page[2]} proofItems={copy.pageHeroProof} />
         <section className="section-pad bg-white dark:bg-[#071225]">
           <div className="container-sds grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="rounded-sds bg-navy p-8 text-white">
@@ -131,10 +131,10 @@ export default function LocalizedPage({ params }: LocalizedPageProps) {
               </div>
             </div>
             <form className="grid gap-4 rounded-sds border border-mist bg-[#F7F9FC] p-6 dark:border-white/10 dark:bg-white/[0.06]">
-              <input className="rounded-sds border border-mist bg-white px-4 py-3 outline-none focus:border-cyan dark:border-white/10 dark:bg-[#071225]" placeholder="Name" aria-label="Name" />
-              <input className="rounded-sds border border-mist bg-white px-4 py-3 outline-none focus:border-cyan dark:border-white/10 dark:bg-[#071225]" placeholder="Email" aria-label="Email" />
-              <textarea className="min-h-40 rounded-sds border border-mist bg-white px-4 py-3 outline-none focus:border-cyan dark:border-white/10 dark:bg-[#071225]" placeholder="Message" aria-label="Message" />
-              <button className="rounded-sds bg-navy px-6 py-4 font-bold text-white transition hover:bg-royal" type="submit">{copy.nav.contact}</button>
+              <input className="rounded-sds border border-mist bg-white px-4 py-3 outline-none focus:border-cyan dark:border-white/10 dark:bg-[#071225]" placeholder={copy.contactForm.name} aria-label={copy.contactForm.name} />
+              <input className="rounded-sds border border-mist bg-white px-4 py-3 outline-none focus:border-cyan dark:border-white/10 dark:bg-[#071225]" placeholder={copy.contactForm.email} aria-label={copy.contactForm.email} />
+              <textarea className="min-h-40 rounded-sds border border-mist bg-white px-4 py-3 outline-none focus:border-cyan dark:border-white/10 dark:bg-[#071225]" placeholder={copy.contactForm.message} aria-label={copy.contactForm.message} />
+              <button className="rounded-sds bg-navy px-6 py-4 font-bold text-white transition hover:bg-royal" type="submit">{copy.contactForm.submit}</button>
             </form>
           </div>
         </section>
@@ -146,7 +146,7 @@ export default function LocalizedPage({ params }: LocalizedPageProps) {
     const page = copy.pages.careers;
     return (
       <>
-        <PageHero eyebrow={page[0]} title={page[1]} description={page[2]} />
+        <PageHero eyebrow={page[0]} title={page[1]} description={page[2]} proofItems={copy.pageHeroProof} />
         <OpenRoles locale={locale} />
       </>
     );
@@ -155,7 +155,7 @@ export default function LocalizedPage({ params }: LocalizedPageProps) {
   const page = copy.pages[slug as "blog" | "careers" | "privacy" | "terms"];
   return (
     <>
-      <PageHero eyebrow={page[0]} title={page[1]} description={page[2]} />
+      <PageHero eyebrow={page[0]} title={page[1]} description={page[2]} proofItems={copy.pageHeroProof} />
       <section className="section-pad bg-white dark:bg-[#071225]">
         <div className="container-sds rounded-sds border border-mist bg-[#F7F9FC] p-8 text-lg leading-8 text-graphite dark:border-white/10 dark:bg-white/[0.06] dark:text-mist">
           <p>{page[2]}</p>

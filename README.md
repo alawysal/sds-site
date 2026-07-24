@@ -81,6 +81,25 @@ export const openRoles: OpenRole[] = [];
 
 Como as páginas são geradas estaticamente no build de produção, publique um novo build para garantir que vagas expiradas sejam removidas na data correta.
 
+## Gerir KPIs
+
+Os valores dos indicadores da página inicial são configurados no array `stats` em `data/site.ts`:
+
+```ts
+export const stats = [
+  { id: "experience", value: 12, suffix: "+" },
+  { id: "projects", value: 85, suffix: "+" },
+  { id: "technologies", value: 30, suffix: "+" },
+  { id: "countries", value: 8, suffix: "+" }
+];
+```
+
+- `value` define o número apresentado.
+- `suffix` define um complemento como `+` ou `%`.
+- `id` associa o indicador ao respetivo rótulo traduzido em `lib/i18n.ts`.
+
+Os rótulos são apresentados automaticamente em inglês, português e francês.
+
 ## Imagens e identidade visual
 
 - Logo SVG: `public/brand/site_logo.svg`
