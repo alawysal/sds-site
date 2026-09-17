@@ -20,7 +20,7 @@ export default function ContactPage() {
             <h2 className="font-heading text-2xl font-extrabold">Contact details</h2>
             <div className="mt-8 grid gap-5 text-white/[0.76]">
               <span className="flex gap-3"><Mail className="text-cyan" /> contact@saldatasolutions.com</span>
-              <span className="flex gap-3"><Phone className="text-cyan" /> +1 000 000 0000</span>
+              <span className="flex gap-3"><Phone className="text-cyan" /> +245 95 547 4947</span>
               <span className="flex gap-3"><MapPin className="text-cyan" /> Global consulting delivery</span>
             </div>
           </div>

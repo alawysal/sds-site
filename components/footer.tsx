@@ -61,7 +61,7 @@ export function Footer() {
             <h2 className="font-heading text-sm font-bold">{copy.footer.contact}</h2>
             <div className="mt-4 grid gap-4 text-sm text-white/[0.68]">
               <span className="flex items-start gap-3"><Mail size={16} className="shrink-0" /> <span className="min-w-0 break-all">contact@saldatasolutions.com</span></span>
-              <span className="flex items-start gap-3"><Phone size={16} className="shrink-0" /> <span className="min-w-0 break-words">+1 000 000 0000</span></span>
+              <span className="flex items-start gap-3"><Phone size={16} className="shrink-0" /> <span className="min-w-0 break-words">+245 95 547 4947</span></span>
               <span className="flex items-start gap-3"><MapPin size={16} className="shrink-0" /> <span className="min-w-0 break-words">{copy.footer.location}</span></span>
             </div>
             <form className="mt-6 flex overflow-hidden rounded-sds border border-white/15 bg-white/[0.08]">
